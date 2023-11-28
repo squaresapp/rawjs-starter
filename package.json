@@ -1,0 +1,23 @@
+{
+	"name": "homello",
+	"version": "1.0.0",
+	"author": "Homello, Inc",
+	"private": true,
+	"description": "",
+	"homepage": "https://www.homello.io",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Homello/HomelloApp.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Homello/HomelloApp/issues"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"serve": "npx vite"
+	},
+	"devDependencies": {
+		"@scrollapp/rawjs": "^1.0.11",
+		"vite": "^4.5.0"
+	}
+}

@@ -1,0 +1,28 @@
+{
+	"compilerOptions": {
+		"outFile": "app/app.js",
+		"module": "system",
+		"moduleResolution": "node",
+		"target": "esnext",
+		"inlineSourceMap": true,
+		"inlineSources": true,
+		"baseUrl": "./",
+		"rootDir": ".",
+		"declaration": true,
+		"declarationMap": true,
+		"stripInternal": true,
+		"incremental": true,
+		"preserveConstEnums": false,
+		"noImplicitAny": true,
+		"lib": [
+			"dom",
+			"esnext",
+			"esnext.array",
+			"esnext.asynciterable"
+		],
+	},
+	"include": [
+		"code/**/*.ts",
+		"node_modules/@scrollapp/rawjs/*.ts"
+	],
+}

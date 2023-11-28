@@ -1,0 +1,93 @@
+ {
+	"folders": [
+		{
+			"path": ".",
+		},
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/.DS_Store": true,
+			"**/node_modules": true,
+			"**/package-lock.json": true,
+			"*.tsbuildinfo": true,
+			"*.d.ts.map": true,
+			"**/.wrangler/**": true,
+		},
+		"search.exclude": {
+			"**/.git": true,
+			"**/.DS_Store": true,
+			"**/node_modules": true,
+			"**/package-lock.json": true,
+			"**/.wrangler/**": true,
+		},
+		"task.allowAutomaticTasks": "on",
+	},
+	"launch": {
+		"configurations": [
+			{
+				"name": "Debug Frontend",
+				"type": "chrome",
+				"request": "launch",
+				"webRoot": "${workspaceFolder}/app",
+				"url": "http://localhost:9999/index.html"
+			}
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "compile",
+				"type": "shell",
+				"command": "tsc",
+				"args": [
+					"--build",
+					"--watch"
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"problemMatcher": [
+					"$tsc"
+				],
+				"runOptions": {
+					"runOn": "folderOpen"
+				},
+				"group": {
+					"kind": "build",
+					"isDefault": true
+				},
+				"isBackground": true
+			},
+			{
+				"label": "serve",
+				"type": "shell",
+				"command": "npm",
+				"args": ["run", "serve"],
+				"isBackground": true,
+				"presentation": { "reveal": "silent" },
+				"problemMatcher": [{
+					"pattern": [{
+						"regexp": ".",
+						"file": 1,
+						"line": 1,
+						"column": 1,
+						"message": 1
+					}],
+					"background": {
+						"activeOnStart": true,
+						"beginsPattern": { "regexp": "." },
+						"endsPattern": { "regexp": "." }
+					}
+				}]
+			}
+		],
+		"inputs": [{
+			"id": "terminate",
+			"type": "command",
+			"command": "workbench.action.tasks.terminate",
+			"args": "terminateAll"
+		}]
+	}
+}
